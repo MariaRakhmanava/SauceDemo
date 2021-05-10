@@ -25,5 +25,6 @@ public class ShoppingCartTests {
         driver.findElement(By.className("shopping_cart_link")).click();
         String productNameInTheShoppingCart = driver.findElement(By.xpath("//*[text()='Sauce Labs Onesie']")).getText();
         Assert.assertEquals(productNameInTheShoppingCart, productNameOnDisplay);
+        driver.quit();
     }
 }
