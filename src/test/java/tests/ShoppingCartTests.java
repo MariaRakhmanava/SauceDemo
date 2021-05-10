@@ -26,7 +26,7 @@ public class ShoppingCartTests {
         driver.findElement(By.xpath("//*[text()='Sauce Labs Onesie']")).click();
         String productNameOnDisplay = driver.findElement(By.xpath("//*[text()='Sauce Labs Onesie']")).getText();
         driver.findElement(By.xpath("//*[@data-test='add-to-cart-sauce-labs-onesie']")).click();
-        driver.findElement(By.cssSelector("span.shopping_cart_badge")).click();
+        driver.findElement(By.cssSelector("a.shopping_cart_link")).click();
         String productNameInTheShoppingCart = driver.findElement(By.xpath("//*[text()='Sauce Labs Onesie']")).getText();
         Assert.assertEquals(productNameInTheShoppingCart, productNameOnDisplay);
         driver.quit();
@@ -45,7 +45,7 @@ public class ShoppingCartTests {
         driver.findElement(By.xpath("//*[text()='Sauce Labs Onesie']")).click();
         String productPriceOnDisplay = driver.findElement(By.xpath("//*[@class='inventory_details_price']")).getText();
         driver.findElement(By.xpath("//*[@data-test='add-to-cart-sauce-labs-onesie']")).click();
-        driver.findElement(By.cssSelector("span.shopping_cart_badge")).click();
+        driver.findElement(By.cssSelector("a.shopping_cart_link")).click();
         Assert.assertEquals(driver.findElement(By.xpath("//*[@class='inventory_item_price']")).getText(), productPriceOnDisplay);
         driver.quit();
     }
@@ -69,7 +69,7 @@ public class ShoppingCartTests {
         driver.findElement(By.xpath("//*[text()='Sauce Labs Backpack']")).click();
         productsPricesOnDisplay.add(driver.findElement(By.className("inventory_details_price")).getText());
         driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
-        driver.findElement(By.cssSelector("span.shopping_cart_badge")).click();
+        driver.findElement(By.cssSelector("a.shopping_cart_link")).click();
         List<WebElement> productsPricesAsWebElements = driver.findElements(By.xpath("//*[@class='inventory_item_price']"));
         List<String> productsPricesInTheShoppingCart = new ArrayList<>(2);
         for (WebElement i : productsPricesAsWebElements) {
