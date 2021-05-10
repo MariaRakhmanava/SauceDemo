@@ -97,10 +97,6 @@ public class ShoppingCartTests {
             productsNamesOnDisplay.add(i.getText());
         }
         List<WebElement> productsToBeAddedToTheShoppingCart = driver.findElements(By.xpath("//*[text()='Add to cart']"));
-        /*
-        лямбду хотела для простоты чтения, но не пошло:
-        productsToBeAddedToTheShoppingCart.forEach((WebElement object) -> click(object));
-         */
         for (WebElement i : productsToBeAddedToTheShoppingCart) {
             i.click();
         }
