@@ -1,0 +1,101 @@
+    LOGIN PAGE
+
+Username input field:
+//as we have a special testing attribute data-test of the value "username", use it above all
+(By.xpath("//*[@data-test='username']));
+//other options
+(By.xpath("//*[@id='user-name']"));
+(By.cssSelector("#user-name"));
+(By.name("user-name"));
+
+Password input field:
+(By.xpath("//*[@data-test='password']"));
+(By.cssSelector("[data-test=password]");
+
+LOGIN button:
+(By.xpath("//*[@data-test='login-button']"));
+(By.cssSelector("input.submit-button btn_action"));
+(By.xpath("//*[@name='login-button']"));
+
+
+
+
+    DISPLAY PAGE
+
+Dropdown menu NAME (A TO Z):
+driver.findElements(By.xpath("//*[@data-test='product_sort_container']"));
+
+Shopping Cart:
+(By.cssSelector("a.shopping_cart_link"));
+(By.cssSelector(".shopping_cart_link"));
+
+MENU button in the left upper corner:
+(By.id("react-burger-menu-btn"));
+(By.xpath("//*[text()='Open Menu']"));
+(By.xpath("//*[@id='react-burger-menu-btn']"));
+(By.cssSelector("#react-burger-menu-btn"));
+
+Links at the bottom of the page:
+(By.xpath("//*[text()='Twitter']"));
+(By.cssSelector("a[href*="linkedin.com"]"));
+
+To click on a product:
+(By.xpath("//*[text()='Sauce Labs Fleece Jacket']"));
+
+To choose all the products shown on the page:
+List<WebElement> productsAll = driver.findElements(By.className("inventory_item_name"));
+
+ADD TO CART button:
+(By.xpath("//*[@data-test='add-to-cart-sauce-labs-fleece-jacket']"));
+(By.id("add-to-cart-sauce-labs-fleece-jacket"));
+(By.name("add-to-cart-sauce-labs-fleece-jacket"));
+
+
+
+
+    SHOPPING CART PAGE
+
+CONTINUE SHOPPING button:
+(By.cssSelector("name=continue-shopping"));
+
+REMOVE button:
+(By.cssSelector(".btn btn_secondary btn_small cart_button"));
+
+CHECKOUT button:
+(By.cssSelector("#checkout"));
+
+
+
+
+    CHECKOUT: YOUR INFORMATION PAGE
+
+First Name input field:
+(By.name("firstName"));
+
+Last Name input field:
+(By.xpath("//*[@id='lastName']"));
+
+ZIP/Postal Code input field:
+(By.id("postal-code"));
+
+CONTINUE button:
+(By.xpath("//*[@type='submit']"));
+
+
+
+
+    CHECKOUT: OVERVIEW PAGE
+
+CANCEL button:
+(By.name("cancel"));
+
+FINISH button:
+(By.xpath("//*[text()='Finish;]"));
+
+
+
+
+    CHECKOUT: COMPLETE PAGE
+
+BACK HOME button:
+(By.xpath("//*[@data-test='back-to-products']"));
